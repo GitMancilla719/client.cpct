@@ -1,0 +1,18 @@
+@use '../../../../global/style-config/index.scss' as *;
+
+.TableContainer {
+  // background-color: aqua;
+  width: 100%;
+  max-height: 27em;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    background-color: $gray;
+    height: 7px;
+    width: 7px;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $bluish-black;
+    border-radius: 5px;
+  }
+}

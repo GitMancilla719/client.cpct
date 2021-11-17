@@ -1,0 +1,93 @@
+@use '../../../global/style-config/index.scss' as *;
+
+.header {
+  margin: 0.5em 0 0.2em 0;
+}
+
+.CardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // background-color: aqua;
+  max-height: 32em;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+    background-color: $gray;
+    height: 3px;
+    width: 3px;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $bluish-black;
+    border-radius: 3px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #f8f9f9;
+  }
+}
+
+.Card {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5em;
+  width: 20em;
+
+  .CardBody {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .VacCategory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaecee;
+    padding: 0em 1em;
+    width: 7em;
+    line-height: 0;
+    h2 {
+      font-weight: 900;
+      font-size: 3em;
+      padding: 0;
+      line-height: 1;
+    }
+    p {
+      line-height: -1;
+    }
+  }
+
+  .DosesContainer {
+    display: flex;
+    flex-direction: column;
+    .Doses {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 105%;
+
+      &:nth-child(1) {
+        border-bottom: 1px solid#EAECEE;
+      }
+      &:nth-child(2) {
+        border-top: 1px solid #eaecee;
+      }
+      padding: 0.3em 1em;
+      h6 {
+        line-height: 1;
+        margin-bottom: 4px;
+        font-weight: 500;
+      }
+      p {
+        font-weight: 700;
+        font-size: 1.5em;
+        margin: 0;
+        line-height: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use '../../../global/style-config/index.scss' as *;
+
+.Container {
+  // background-color: aqua;
+  // color: red;
+  max-height: 570px;
+  // overflow: scroll;
+}
+
+.TableContainer {
+  // background-color: aqua;
+  width: 61em;
+  max-height: 27em;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    background-color: $gray;
+    height: 7px;
+    width: 7px;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $bluish-black;
+    border-radius: 5px;
+  }
+}
+
+.Dropdown {
+  width: 30em;
+}
+
+.BtnGrp {
+  display: block;
+  margin: 0 0 0.5em 0;
+}
+
+.loc {
+  margin: 0.5em 0 0.2em 0;
+}

@@ -1,0 +1,21 @@
+@use '../../../global/style-config/index.scss' as *;
+
+.Container {
+  max-height: 570px;
+}
+
+.TableContainer {
+  width: 65em;
+  max-height: 30em;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    background-color: $gray;
+    height: 7px;
+    width: 7px;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $bluish-black;
+    border-radius: 5px;
+  }
+}

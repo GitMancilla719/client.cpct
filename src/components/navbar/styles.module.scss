@@ -1,0 +1,70 @@
+@use '../../global/style-config/index.scss' as *;
+
+.Container {
+  width: 100vw;
+  height: 2.2em;
+}
+
+.Menu {
+  .Logo {
+    margin: 0 auto;
+    padding: 0;
+    width: 7em;
+
+    .LogoImage {
+      width: 100%;
+    }
+
+    @include sm-only {
+      margin-top: -1em;
+    }
+  }
+
+  .Selection {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .Links {
+      padding: 0 1em 0 1em;
+    }
+
+    @include xl-only {
+      // display: none;
+      // background-color: yellow;
+    }
+    @include lg-only {
+      display: none;
+    }
+    @include md-only {
+      display: none;
+    }
+    @include sm-only {
+      display: none;
+    }
+  }
+}
+
+.Burger {
+  width: 2em;
+  @include on-lg {
+    display: none;
+  }
+  @include xl-only {
+    display: none;
+  }
+  @include lg-only {
+    display: flex;
+  }
+  @include md-only {
+    display: block;
+  }
+  @include sm-only {
+    position: absolute;
+    right: 3.5em;
+    top: 0.5em;
+    display: block;
+    // margin-left: -3em;
+  }
+}

@@ -1,0 +1,159 @@
+@use '../../../../global/style-config/index.scss' as *;
+
+.SectionHeader {
+  margin: 0.5em 0;
+  font-weight: 600;
+  background-color: rgb(63, 21, 21);
+  color: white;
+  padding: 0.5em 0.5em;
+  border-radius: 50px 20em 10px 10px;
+}
+
+.Accordion {
+  width: 95%;
+
+  .AccordionBody {
+    background-color: rgb(249, 250, 255);
+    width: 100%;
+  }
+}
+
+.Cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Card {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5em;
+  // width: 8.2em;
+
+  .CardBody {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .CategoryTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaecee;
+    padding: 0em 1em;
+    width: 7em;
+    line-height: 0;
+    .Category {
+      font-weight: 900;
+      font-size: 14pt;
+      padding: 0;
+      line-height: 2;
+
+      @include md-only {
+        padding-left: 1em;
+        margin-bottom: 1em;
+        line-height: 1;
+        font-size: 10pt;
+      }
+      @include sm-only {
+        padding-left: 1em;
+        margin-bottom: 1em;
+        line-height: 1;
+        font-size: 10pt;
+      }
+    }
+    p {
+      font-weight: 700;
+      font-size: 1.5em;
+      margin-top: -0.2em;
+      line-height: 0.5;
+    }
+
+    // @include on-lg {
+    //   display: none;
+    // }
+    // @include xl-only {
+    //   display: none;
+    // }
+    // @include lg-only {
+    //   display: none;
+    // }
+    @include md-only {
+      width: 4em;
+    }
+    @include sm-only {
+      width: 4em;
+    }
+  }
+
+  .CategoryStatus {
+    display: flex;
+    flex-direction: column;
+    .Section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // width: 105%;
+
+      @include md-only {
+        // width: 100%;
+      }
+      @include sm-only {
+        // width: 100%;
+      }
+      // @include xl-only {
+      //   width: 105%;
+      // }
+      // @include lg-only {
+      //   width: 105%;
+      // }
+
+      &:nth-child(1) {
+        border-bottom: 1px solid#EAECEE;
+      }
+      &:nth-child(2) {
+        border-top: 1px solid #eaecee;
+      }
+      padding: 0.3em 1em;
+      h6 {
+        line-height: 1;
+        margin-bottom: 4px;
+        font-weight: 500;
+      }
+      .Occupied {
+        color: $red;
+
+        @include md-only {
+          font-size: 11pt;
+        }
+        @include sm-only {
+          font-size: 11pt;
+        }
+      }
+      .Vacant {
+        color: $green;
+
+        @include md-only {
+          font-size: 11pt;
+        }
+        @include sm-only {
+          font-size: 11pt;
+        }
+      }
+      p {
+        font-weight: 700;
+        font-size: 1.5em;
+        margin: 0;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.NoData {
+  color: rgb(162, 162, 162);
+  text-align: center;
+}

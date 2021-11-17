@@ -1,0 +1,14 @@
+@use '../../../../global/style-config/index.scss' as *;
+
+.Chart {
+  width: 100%;
+}
+
+.SectionHeader {
+  margin: 0.5em 0;
+  font-weight: 600;
+  background-color: rgb(21, 26, 63);
+  color: white;
+  padding: 0.5em 0.5em;
+  border-radius: 50px 20em 10px 10px;
+}

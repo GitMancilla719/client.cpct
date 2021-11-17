@@ -1,0 +1,114 @@
+@use '../../../../global/style-config/index.scss' as *;
+
+.SectionHeader {
+  margin: 0.5em 0;
+  font-weight: 600;
+  background-color: rgb(214, 190, 2);
+  color: rgb(0, 0, 0);
+  padding: 0.5em 0.5em;
+  border-radius: 50px 20em 10px 10px;
+}
+.lgndsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .lgnds1 {
+    border-left: 20px solid gray;
+    width: -5em;
+    color: rgb(28, 40, 51);
+    padding-left: 0.3em;
+    margin-left: 0.5em;
+  }
+  .lgnds2 {
+    border-left: 20px solid #d4ac0d;
+    width: -5em;
+    color: rgb(28, 40, 51);
+    padding-left: 0.3em;
+    margin-left: 0.5em;
+  }
+  .lgnds3 {
+    border-left: 20px solid #ff832f;
+    width: -5em;
+    color: rgb(28, 40, 51);
+    padding-left: 0.3em;
+    margin-left: 0.5em;
+  }
+  .lgnds4 {
+    border-left: 20px solid #ff0000;
+    width: -5em;
+    color: rgb(28, 40, 51);
+    padding-left: 0.3em;
+    margin-left: 0.5em;
+  }
+  .lgnds5 {
+    border-left: 20px solid #5c0000;
+    width: -5em;
+    color: rgb(28, 40, 51);
+    padding-left: 0.3em;
+    margin-left: 0.5em;
+  }
+}
+
+.TableContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .TableHeaderRowConf {
+    background-color: rgb(23, 23, 51);
+    color: white;
+  }
+
+  .TableHeaderRowRcv {
+    background-color: rgb(26, 79, 26);
+    color: white;
+  }
+
+  .TableHeaderRowDts {
+    background-color: rgb(146, 0, 0);
+    color: white;
+  }
+
+  .TableConf {
+    border: 1.5px solid rgb(23, 23, 51);
+  }
+
+  .TableRcv {
+    border: 1.5px solid rgb(26, 79, 26);
+  }
+
+  .TableDts {
+    border: 1.5px solid rgb(146, 0, 0);
+  }
+}
+
+.Table {
+  // background-color: #5c0000;
+  margin: 0 0.5em;
+  width: 22em;
+  .TableLoc {
+    width: 6em;
+  }
+  .TableStat {
+    width: 5em;
+    text-align: center;
+  }
+  .TableDate {
+    width: 5em;
+    text-align: center;
+    font-size: 9pt;
+  }
+
+  .TableHeaderRow {
+    .TableHeader {
+      text-align: center;
+    }
+
+    .TableHeaderLoc {
+      border-left: 5px solid rgb(23, 23, 51);
+    }
+  }
+}

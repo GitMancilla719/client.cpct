@@ -50,7 +50,7 @@ const Statcards = ({
                 />
                 <p className={style.Rates}>
                   <span className={style.Active}>
-                    Active: {ActiveRate}%
+                    Active: {ActiveRate >= 0 ? ActiveRate : 0}%
                   </span>
                 </p>
               </div>

@@ -24,10 +24,11 @@ const Vaccine = () => {
   const [newData, setNewData] = useState()
 
   const vacsInfo = Vacs.vacs
-  console.table(vacsInfo)
+  // console.table(vacsInfo)
 
   const handleClose = () => {
     setToggleUpdateModal(false)
+    // console.log(newData)
   }
 
   const handleOpen = () => {
@@ -167,6 +168,46 @@ const Vaccine = () => {
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
                 <p>{vacsInfo.a5_d2 ?? 'Loading..'}</p>
+              </div>
+            </div>
+          </Card.Body>
+        </Card>
+
+        <Card className={style.Card}>
+          <Card.Body className={style.CardBody}>
+            <div className={style.VacCategory}>
+              <h2>ROAP</h2>
+              <p>description</p>
+            </div>
+            <div className={style.DosesContainer}>
+              <div className={style.Doses}>
+                <h6>First Dose</h6>
+                <p>{vacsInfo.roap_d1 ?? 'Loading..'}</p>
+              </div>
+
+              <div className={style.Doses}>
+                <h6>Second Dose</h6>
+                <p>{vacsInfo.roap_d2 ?? 'Loading..'}</p>
+              </div>
+            </div>
+          </Card.Body>
+        </Card>
+
+        <Card className={style.Card}>
+          <Card.Body className={style.CardBody}>
+            <div className={style.VacCategory}>
+              <h2>ROPP</h2>
+              <p>description</p>
+            </div>
+            <div className={style.DosesContainer}>
+              <div className={style.Doses}>
+                <h6>First Dose</h6>
+                <p>{vacsInfo.ropp_d1 ?? 'Loading..'}</p>
+              </div>
+
+              <div className={style.Doses}>
+                <h6>Second Dose</h6>
+                <p>{vacsInfo.ropp_d2 ?? 'Loading..'}</p>
               </div>
             </div>
           </Card.Body>

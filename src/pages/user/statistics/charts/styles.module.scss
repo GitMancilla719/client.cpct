@@ -12,3 +12,142 @@
   padding: 0.5em 0.5em;
   border-radius: 50px 20em 10px 10px;
 }
+
+// ranges
+
+.monthText {
+  text-align: center;
+
+  font-size: 14pt;
+  margin: 0.5em 0;
+  b {
+    font-size: 14pt;
+  }
+}
+.weeklyText2 {
+  text-align: center;
+  // background-color: aqua;
+  font-size: 14pt;
+  margin: -1em 0 0.3em 0;
+  b {
+    font-size: 14pt;
+  }
+}
+
+.SelectorContainer {
+  display: flex;
+  flex-direction: row;
+
+  .dropdowns {
+    width: 8em;
+    margin: 0.5em;
+  }
+}
+
+.CardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Card {
+  display: flex;
+  flex-direction: row;
+  margin: 0em 0.7em 1em 0.7em;
+  width: 11em;
+
+  .CardBody {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .StatCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaecee;
+    padding: 0em 1em;
+
+    h3 {
+      font-weight: 650;
+      font-size: 16pt;
+      padding: 0.3em 0em;
+      line-height: 1;
+      // color: $blue;
+      margin: 0;
+    }
+
+    .Confirmed {
+      color: $blue;
+    }
+
+    .Recoveries {
+      color: $green;
+    }
+
+    .Deaths {
+      color: $red;
+    }
+  }
+
+  .Stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .Number {
+      font-weight: 700;
+      font-size: 22pt;
+      padding: 0.3em 0em;
+      line-height: 1;
+      color: rgb(31, 31, 31);
+      margin: 0;
+    }
+
+    .Rates {
+      line-height: 0;
+      padding-top: 0.5em;
+
+      .Active {
+        color: $yellow;
+        font-size: 11pt;
+      }
+
+      .Recov {
+        color: $green;
+        font-size: 11;
+      }
+
+      .Dts {
+        color: $red;
+        font-size: 11pt;
+      }
+    }
+  }
+}
+
+.Bar {
+  background-color: rgb(246, 247, 255, 0.8);
+  border-radius: 10px;
+
+  height: 20em;
+  padding: 3%;
+  margin-bottom: 2em;
+}
+
+.DateInput {
+  margin: 0.7em 1em 0 0.6em;
+}
+
+.ModeButton {
+  &::after {
+    content: 'Click to toggle Daily and Monthly Statistics';
+    padding-left: 0.5em;
+    font-size: 9pt;
+    font-style: italic;
+    color: rgb(128, 128, 128);
+  }
+}

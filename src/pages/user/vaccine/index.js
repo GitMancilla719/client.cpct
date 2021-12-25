@@ -14,18 +14,47 @@ const Vaccine = () => {
     dispatch(getVacs())
   }, [dispatch])
 
+  const popPercentage =
+    vacsInfo &&
+    (
+      (parseInt(vacsInfo.vaccinatedPopulation) /
+        parseInt(vacsInfo.totalPopulation)) *
+      100
+    ).toFixed(2)
+
+  console.log(popPercentage)
   return (
     <div className={style.Container}>
       <h2 className={style.SectionHeader}>
         Provincial Vaccination Statistics
       </h2>
 
-      <p>
+      <p style={{ textAlign: 'center' }}>
         Status of vaccination throughout the whole province of
         cavite.
       </p>
 
-      <br />
+      {/* <br /> */}
+
+      <div className={style.CardContainer}>
+        <Card className={style.Card2}>
+          <Card.Body className={style.CardBody}>
+            <div className={style.StatCategory}>
+              <h3 className={style.Recoveries}>
+                Total Vaccinated Population
+              </h3>
+            </div>
+            <div className={style.Stat2}>
+              <p className={style.Number}>
+                {vacsInfo.vaccinatedPopulation ?? 'Loading..'}
+              </p>
+              <p className={style.percentage}>
+                <b>{popPercentage}%</b> of the total population
+              </p>
+            </div>
+          </Card.Body>
+        </Card>
+      </div>
 
       <div className={style.CardContainer}>
         <Card className={style.Card}>
@@ -123,6 +152,46 @@ const Vaccine = () => {
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
                 <p>{vacsInfo.a5_d2 ?? 'Loading..'}</p>
+              </div>
+            </div>
+          </Card.Body>
+        </Card>
+
+        <Card className={style.Card}>
+          <Card.Body className={style.CardBody}>
+            <div className={style.VacCategory}>
+              <h2>ROAP</h2>
+              <p>Rest of the Adult Population</p>
+            </div>
+            <div className={style.DosesContainer}>
+              <div className={style.Doses}>
+                <h6>First Dose</h6>
+                <p>{vacsInfo.roap_d1 ?? 'Loading..'}</p>
+              </div>
+
+              <div className={style.Doses}>
+                <h6>Second Dose</h6>
+                <p>{vacsInfo.roap_d2 ?? 'Loading..'}</p>
+              </div>
+            </div>
+          </Card.Body>
+        </Card>
+
+        <Card className={style.Card}>
+          <Card.Body className={style.CardBody}>
+            <div className={style.VacCategory}>
+              <h2>ROPP</h2>
+              <p>Rest of the P Population</p>
+            </div>
+            <div className={style.DosesContainer}>
+              <div className={style.Doses}>
+                <h6>First Dose</h6>
+                <p>{vacsInfo.ropp_d1 ?? 'Loading..'}</p>
+              </div>
+
+              <div className={style.Doses}>
+                <h6>Second Dose</h6>
+                <p>{vacsInfo.ropp_d2 ?? 'Loading..'}</p>
               </div>
             </div>
           </Card.Body>

@@ -154,6 +154,77 @@ const VaccineForm = ({ data, setFunction }) => {
 
       <hr />
 
+      <b>ROAP First Dose</b>
+      <input
+        type="number"
+        value={data && data.roap_d1}
+        onChange={e =>
+          setFunction({
+            ...data,
+            roap_d1: parseInt(e.target.value)
+          })
+        }
+        required
+      />
+
+      <b>ROAP Second Dose</b>
+      <input
+        type="number"
+        value={data && data.roap_d2}
+        onChange={e =>
+          setFunction({
+            ...data,
+            roap_d2: parseInt(e.target.value)
+          })
+        }
+        required
+      />
+
+      <hr />
+
+      <b>ROPP First Dose</b>
+      <input
+        type="number"
+        value={data && data.ropp_d1}
+        onChange={e =>
+          setFunction({
+            ...data,
+            ropp_d1: parseInt(e.target.value)
+          })
+        }
+        required
+      />
+
+      <b>ROPP Second Dose</b>
+      <input
+        type="number"
+        value={data && data.ropp_d2}
+        onChange={e =>
+          setFunction({
+            ...data,
+            ropp_d2: parseInt(e.target.value)
+          })
+        }
+        required
+      />
+
+      <hr />
+
+      <b>Province Population</b>
+      <input
+        type="number"
+        value={data && data.totalPopulation}
+        onChange={e =>
+          setFunction({
+            ...data,
+            totalPopulation: parseInt(e.target.value)
+          })
+        }
+        required
+      />
+
+      <hr />
+
       <b>Date</b>
       <input
         type="date"

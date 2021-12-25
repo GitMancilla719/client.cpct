@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { Line, Doughnut } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import style from './styles.module.scss'
 
 import CSButton from '../../../../components/button'
+import Ranges from './ranges'
 
 const Charts = ({ data }) => {
   const [datas, setdatas] = useState()
@@ -118,13 +119,15 @@ const Charts = ({ data }) => {
   return (
     <div className={style.Chart}>
       <hr />
-      <h2 className={style.SectionHeader}>Cases Growth Chart</h2>
-      <p>
-        Overtime growth of cases(Confirmed, Deaths and
-        Recoveries) in this location.
+      <h2 className={style.SectionHeader}>Growth Statistics</h2>
+
+      <Ranges data={data} />
+      <p style={{ textAlign: 'center', marginTop: '1em' }}>
+        Growth of cases(Confirmed, Deaths and Recoveries) over
+        time in this location.
       </p>
 
-      <br />
+      {/* <br /> */}
 
       <div>
         <CSButton

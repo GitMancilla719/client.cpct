@@ -22,7 +22,27 @@ const Vaccine = () => {
       100
     ).toFixed(2)
 
-  console.log(popPercentage)
+  const totalD1 =
+    vacsInfo &&
+    vacsInfo.a1_d1 +
+      vacsInfo.a2_d1 +
+      vacsInfo.a3_d1 +
+      vacsInfo.a4_d1 +
+      vacsInfo.a5_d1 +
+      vacsInfo.roap_d1 +
+      vacsInfo.ropp_d1
+
+  const totalD2 =
+    vacsInfo &&
+    vacsInfo.a1_d2 +
+      vacsInfo.a2_d2 +
+      vacsInfo.a3_d2 +
+      vacsInfo.a4_d2 +
+      vacsInfo.a5_d2 +
+      vacsInfo.roap_d2 +
+      vacsInfo.ropp_d2
+
+  console.log(totalD1, totalD2)
   return (
     <div className={style.Container}>
       <h2 className={style.SectionHeader}>
@@ -50,6 +70,38 @@ const Vaccine = () => {
               </p>
               <p className={style.percentage}>
                 <b>{popPercentage}%</b> of the total population
+              </p>
+            </div>
+          </Card.Body>
+        </Card>
+      </div>
+
+      <div className={style.CardContainer}>
+        <Card className={style.Card2}>
+          <Card.Body className={style.CardBody}>
+            <div className={style.StatCategory}>
+              <h3 className={style.Recoveries}>
+                1st Dose administered
+              </h3>
+            </div>
+            <div className={style.Stat2}>
+              <p className={style.Number}>
+                {totalD1 ?? 'Loading..'}
+              </p>
+            </div>
+          </Card.Body>
+        </Card>
+
+        <Card className={style.Card2}>
+          <Card.Body className={style.CardBody}>
+            <div className={style.StatCategory}>
+              <h3 className={style.Recoveries}>
+                2nd Dose administered
+              </h3>
+            </div>
+            <div className={style.Stat2}>
+              <p className={style.Number}>
+                {totalD2 ?? 'Loading..'}
               </p>
             </div>
           </Card.Body>

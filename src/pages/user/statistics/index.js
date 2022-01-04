@@ -54,7 +54,10 @@ const Statistics = () => {
 
       {record && (
         <div className={style.panel2}>
-          <Charts data={record && record} />
+          <Charts
+            data={record && record}
+            selectedLocation={selectedLoc}
+          />
         </div>
       )}
 

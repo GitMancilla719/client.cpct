@@ -42,7 +42,8 @@ const Vaccine = () => {
       vacsInfo.roap_d2 +
       vacsInfo.ropp_d2
 
-  console.log(totalD1, totalD2)
+  const readableDate = vacsInfo && new Date(vacsInfo.date)
+  console.log(readableDate.toString().slice(4, 15))
   return (
     <div className={style.Container}>
       <h2 className={style.SectionHeader}>
@@ -52,6 +53,11 @@ const Vaccine = () => {
       <p style={{ textAlign: 'center' }}>
         Status of vaccination throughout the whole province of
         cavite.
+      </p>
+
+      <p style={{ textAlign: 'center' }}>
+        Last updated:{' '}
+        <b>{readableDate.toString().slice(4, 15)}</b>
       </p>
 
       {/* <br /> */}
@@ -66,7 +72,9 @@ const Vaccine = () => {
             </div>
             <div className={style.Stat2}>
               <p className={style.Number}>
-                {vacsInfo.vaccinatedPopulation ?? 'Loading..'}
+                {vacsInfo
+                  ? vacsInfo.vaccinatedPopulation.toLocaleString()
+                  : 'Loading..'}
               </p>
               <p className={style.percentage}>
                 <b>{popPercentage}%</b> of the total population
@@ -86,7 +94,9 @@ const Vaccine = () => {
             </div>
             <div className={style.Stat2}>
               <p className={style.Number}>
-                {totalD1 ?? 'Loading..'}
+                {vacsInfo
+                  ? totalD1.toLocaleString()
+                  : 'Loading..'}
               </p>
             </div>
           </Card.Body>
@@ -101,7 +111,9 @@ const Vaccine = () => {
             </div>
             <div className={style.Stat2}>
               <p className={style.Number}>
-                {totalD2 ?? 'Loading..'}
+                {vacsInfo
+                  ? totalD2.toLocaleString()
+                  : 'Loading..'}
               </p>
             </div>
           </Card.Body>
@@ -118,12 +130,20 @@ const Vaccine = () => {
             <div className={style.DosesContainer}>
               <div className={style.Doses}>
                 <h6>First Dose</h6>
-                <p>{vacsInfo.a1_d1 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a1_d1.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
 
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
-                <p>{vacsInfo.a1_d2 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a1_d2.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
             </div>
           </Card.Body>
@@ -138,12 +158,20 @@ const Vaccine = () => {
             <div className={style.DosesContainer}>
               <div className={style.Doses}>
                 <h6>First Dose</h6>
-                <p>{vacsInfo.a2_d1 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a2_d1.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
 
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
-                <p>{vacsInfo.a2_d2 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a2_d2.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
             </div>
           </Card.Body>
@@ -158,12 +186,20 @@ const Vaccine = () => {
             <div className={style.DosesContainer}>
               <div className={style.Doses}>
                 <h6>First Dose</h6>
-                <p>{vacsInfo.a3_d1 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a3_d1.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
 
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
-                <p>{vacsInfo.a3_d2 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a3_d2.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
             </div>
           </Card.Body>
@@ -178,12 +214,20 @@ const Vaccine = () => {
             <div className={style.DosesContainer}>
               <div className={style.Doses}>
                 <h6>First Dose</h6>
-                <p>{vacsInfo.a4_d1 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a4_d1.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
 
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
-                <p>{vacsInfo.a4_d2 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a4_d2.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
             </div>
           </Card.Body>
@@ -198,12 +242,20 @@ const Vaccine = () => {
             <div className={style.DosesContainer}>
               <div className={style.Doses}>
                 <h6>First Dose</h6>
-                <p>{vacsInfo.a5_d1 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a5_d1.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
 
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
-                <p>{vacsInfo.a5_d2 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.a5_d2.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
             </div>
           </Card.Body>
@@ -218,12 +270,20 @@ const Vaccine = () => {
             <div className={style.DosesContainer}>
               <div className={style.Doses}>
                 <h6>First Dose</h6>
-                <p>{vacsInfo.roap_d1 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.roap_d1.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
 
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
-                <p>{vacsInfo.roap_d2 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.roap_d2.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
             </div>
           </Card.Body>
@@ -233,17 +293,25 @@ const Vaccine = () => {
           <Card.Body className={style.CardBody}>
             <div className={style.VacCategory}>
               <h2>ROPP</h2>
-              <p>Rest of the P Population</p>
+              <p>Rest of the Pediatric Population</p>
             </div>
             <div className={style.DosesContainer}>
               <div className={style.Doses}>
                 <h6>First Dose</h6>
-                <p>{vacsInfo.ropp_d1 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.ropp_d1.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
 
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
-                <p>{vacsInfo.ropp_d2 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo
+                    ? vacsInfo.ropp_d2.toLocaleString()
+                    : 'Loading..'}
+                </p>
               </div>
             </div>
           </Card.Body>

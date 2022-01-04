@@ -93,7 +93,7 @@ export const updateAdmin = createAsyncThunk(
   'admin/updateAdmin',
   async data => {
     try {
-      console.log(data)
+      // console.log(data)
       const token = localStorage.getItem('access_token')
       const response = await axios.put(
         `${BASE_URL}/admin?id=${data.id}}`,

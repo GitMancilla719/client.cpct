@@ -11,7 +11,7 @@ import LOGO from '../../../assets/images/CPCT_LOGO.png'
 const Login = () => {
   const dispatch = useDispatch()
   const admin = useSelector(state => state.admin)
-  console.log(admin)
+  // console.log(admin)
 
   const [creds, setCreds] = useState(null)
 

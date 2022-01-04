@@ -6,7 +6,7 @@ import CountUp from 'react-countup'
 import style from './styles.module.scss'
 
 const Facilities = ({ data }) => {
-  console.log()
+  // console.log()
   return (
     <div>
       <hr />

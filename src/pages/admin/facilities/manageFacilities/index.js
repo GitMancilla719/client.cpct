@@ -34,7 +34,7 @@ const ManageFacilities = () => {
   const selectedFacility = data => {
     setFacility(data)
     setToggleUpdateModal(true)
-    console.log(data)
+    // console.log(data)
   }
 
   const updateFacilityData = async () => {

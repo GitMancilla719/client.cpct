@@ -7,7 +7,7 @@ import style from './styles.module.scss'
 import CSButton from '../../../../components/button'
 import Ranges from './ranges'
 
-const Charts = ({ data }) => {
+const Charts = ({ data, selectedLocation }) => {
   const [datas, setdatas] = useState()
 
   const daily = () => {
@@ -116,12 +116,15 @@ const Charts = ({ data }) => {
       }
     ]
   }
+  // console.log('data', selectedLocation)
   return (
     <div className={style.Chart}>
       <hr />
-      <h2 className={style.SectionHeader}>Growth Statistics</h2>
+      <h2 className={style.SectionHeader}>
+        {selectedLocation} Growth Statistics
+      </h2>
 
-      <Ranges data={data} />
+      <Ranges data={data} selectedLocation={selectedLocation} />
       <p style={{ textAlign: 'center', marginTop: '1em' }}>
         Growth of cases(Confirmed, Deaths and Recoveries) over
         time in this location.
@@ -160,7 +163,8 @@ const Charts = ({ data }) => {
 }
 
 Charts.propTypes = {
-  data: PropTypes.any
+  data: PropTypes.any,
+  selectedLocation: PropTypes.any
 }
 
 export default Charts

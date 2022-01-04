@@ -119,12 +119,18 @@ const Vaccine = () => {
             <div className={style.DosesContainer}>
               <div className={style.Doses}>
                 <h6>First Dose</h6>
-                <p>{vacsInfo.a5_d1 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo.a5_d1.toLocaleString() ??
+                    'Loading..'}
+                </p>
               </div>
 
               <div className={style.Doses}>
                 <h6>Second Dose</h6>
-                <p>{vacsInfo.a5_d2 ?? 'Loading..'}</p>
+                <p>
+                  {vacsInfo.a5_d2.toLocaleString() ??
+                    'Loading..'}
+                </p>
               </div>
             </div>
           </Card.Body>

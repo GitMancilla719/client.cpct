@@ -11,11 +11,24 @@ import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 import style from './styles.module.scss'
 import CSButton from '../../../../components/button'
 
-const Ranges = ({ data }) => {
+import {
+  PDFViewer,
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  ReactPDF
+} from '@react-pdf/renderer'
+import ExportPdf from './exportPdf'
+import CSModal from '../../../../components/modal'
+
+const Ranges = ({ data, selectedLocation }) => {
   const [selectedYear, setSelectedYear] = useState()
   const [selectedMonth, setSelectedMonth] = useState()
   const [selectedDate, setSelectedDate] = useState()
   const [mode, setMode] = useState(true)
+  const [modal, setModal] = useState(false)
 
   const calculatedData =
     data &&
@@ -46,6 +59,7 @@ const Ranges = ({ data }) => {
     }
   }
 
+  // MONTHLY
   const week1 = calculatedData
     ? calculatedData.smWeekly.week1
     : 0
@@ -61,6 +75,7 @@ const Ranges = ({ data }) => {
   const week5 = calculatedData
     ? calculatedData.smWeekly.week5
     : 0
+  // MONTHLY
 
   const dataset = calculatedData && {
     labels: [
@@ -131,7 +146,7 @@ const Ranges = ({ data }) => {
     ? dailyData.Deaths - prevDailyData.Deaths
     : 0
 
-  // console.log(dailyConf, dailyRcv, dailyDts)
+  // console.log(data)
 
   const ToggleButton = () => {
     setMode(!mode)
@@ -139,20 +154,9 @@ const Ranges = ({ data }) => {
     setSelectedMonth(null)
     setSelectedYear(null)
   }
+
   return (
     <div>
-      {/* <BootstrapSwitchButton
-        checked={false}
-        onlabel="Monthly"
-        offlabel="Daily"
-        onChange={() => {
-          setMode(!mode)
-        }}
-        width={100}
-        // height={0}
-        size="xs"
-      /> */}
-
       <div className={style.ModeButton}>
         <CSButton
           label={
@@ -268,6 +272,52 @@ const Ranges = ({ data }) => {
                 <option key={data}>{data}</option>
               ))}
             </Form.Select>
+
+            <div
+              style={{
+                // backgroundColor: 'tomato',
+                display: 'flex',
+                justifyContent: 'center',
+                padding: '0.53em 0.2em'
+              }}
+            >
+              <CSButton
+                label="export"
+                variant="dark"
+                onClickFunc={() => setModal(true)}
+                disabled={false}
+                size="sm"
+              />
+            </div>
+
+            <CSModal
+              header={'Export Report'}
+              content={
+                <ExportPdf
+                  calculatedData={calculatedData}
+                  selectedLocation={selectedLocation}
+                  monthYear={
+                    monthName &&
+                    `${monthName.mt} ${selectedYear}`
+                  }
+                  data={data}
+                  selectedYear={selectedYear}
+                  selectedMonth={selectedMonth}
+                />
+              }
+              // footer={
+              //   <CSButton
+              //     label="Submit"
+              //     variant="dark"
+              //     onClickFunc={testOnClick}
+              //     disabled={false}
+              //     size="sm"
+              //   />
+              // }
+              onHide={() => setModal(false)}
+              state={modal}
+              dialogClassName={'modal-lg'}
+            />
           </div>
 
           {monthName &&
@@ -379,7 +429,8 @@ const Ranges = ({ data }) => {
 }
 
 Ranges.propTypes = {
-  data: PropTypes.any
+  data: PropTypes.any,
+  selectedLocation: PropTypes.any
 }
 
 export default Ranges

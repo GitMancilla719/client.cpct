@@ -193,7 +193,8 @@ const rangeData = (data, selectedYear, selectedMonth) => {
 
     return {
       smCases: selectedMonthCases,
-      smWeekly: selectedMonthWeekly
+      smWeekly: selectedMonthWeekly,
+      smReport: selectedYearMonth
     }
   }
 

@@ -11,16 +11,16 @@ import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 import style from './styles.module.scss'
 import CSButton from '../../../../components/button'
 
-import {
-  PDFViewer,
-  Document,
-  Page,
-  Text,
-  View,
-  StyleSheet,
-  ReactPDF
-} from '@react-pdf/renderer'
-import ExportPdf from './exportPdf'
+// import {
+//   PDFViewer,
+//   Document,
+//   Page,
+//   Text,
+//   View,
+//   StyleSheet,
+//   ReactPDF
+// } from '@react-pdf/renderer'
+// import ExportPdf from './exportPdf'
 import CSModal from '../../../../components/modal'
 
 const Ranges = ({ data, selectedLocation }) => {
@@ -273,7 +273,7 @@ const Ranges = ({ data, selectedLocation }) => {
               ))}
             </Form.Select>
 
-            <div
+            {/* <div
               style={{
                 // backgroundColor: 'tomato',
                 display: 'flex',
@@ -288,9 +288,9 @@ const Ranges = ({ data, selectedLocation }) => {
                 disabled={false}
                 size="sm"
               />
-            </div>
+            </div> */}
 
-            <CSModal
+            {/* <CSModal
               header={'Export Report'}
               content={
                 <ExportPdf
@@ -317,7 +317,7 @@ const Ranges = ({ data, selectedLocation }) => {
               onHide={() => setModal(false)}
               state={modal}
               dialogClassName={'modal-lg'}
-            />
+            /> */}
           </div>
 
           {monthName &&
